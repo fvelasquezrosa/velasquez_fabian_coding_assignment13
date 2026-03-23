@@ -34,5 +34,5 @@ jobs:
         env:
           CI: true
 
-      - name: Run production build
+      - name: Run build
         run: npm run build
