@@ -15,11 +15,28 @@ import { TableFooter } from './components/TableFooter';
 
 const App: React.FC = () => {
   return (
-    <div style={{ padding: '24px', display: 'grid', gap: '20px', maxWidth: 980, margin: '0 auto' }}>
+    <div
+      style={{
+        padding: '24px',
+        display: 'grid',
+        gap: '20px',
+        maxWidth: 980,
+        margin: '0 auto',
+      }}
+    >
       <h1 style={{ margin: 0 }}>UI Component Library</h1>
-      <p style={{ margin: 0 }}>Production build served with Docker on port 8083.</p>
+      <p style={{ margin: 0 }}>
+        Production build served with Docker on port 8083.
+      </p>
 
-      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <div
+        style={{
+          display: 'flex',
+          gap: 12,
+          flexWrap: 'wrap',
+          alignItems: 'center',
+        }}
+      >
         <Button label="Primary Button" />
         <Button label="Disabled Button" disabled />
         <Label text="New" />
@@ -37,7 +54,14 @@ const App: React.FC = () => {
         body="This is a card component. It supports a disabled state and styling props."
       />
 
-      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
+      <div
+        style={{
+          display: 'flex',
+          gap: 12,
+          flexWrap: 'wrap',
+          alignItems: 'center',
+        }}
+      >
         <Dropdown
           options={[
             { label: 'Option 1', value: '1' },

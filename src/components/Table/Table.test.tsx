@@ -11,7 +11,7 @@ describe('Table', () => {
             <td>Test</td>
           </tr>
         </tbody>
-      </Table>
+      </Table>,
     );
     expect(screen.getByText(/test/i)).toBeInTheDocument();
   });
@@ -24,7 +24,7 @@ describe('Table', () => {
             <td>Disabled</td>
           </tr>
         </tbody>
-      </Table>
+      </Table>,
     );
     const el = screen.getByText(/disabled/i);
     expect(el.closest('table')).toHaveStyle('opacity: 0.5');

@@ -11,7 +11,7 @@ describe('TableRow', () => {
             <td>Test Row</td>
           </TableRow>
         </tbody>
-      </table>
+      </table>,
     );
     expect(screen.getByText(/test row/i)).toBeInTheDocument();
   });
@@ -24,7 +24,7 @@ describe('TableRow', () => {
             <td>Disabled Row</td>
           </TableRow>
         </tbody>
-      </table>
+      </table>,
     );
     const el = screen.getByText(/disabled row/i);
     expect(el.closest('tr')).toHaveStyle('opacity: 0.5');

@@ -9,7 +9,7 @@ describe('HeroImage', () => {
         imageUrl="https://placehold.co/1200x600/png"
         title="Welcome"
         subtitle="Subtitle"
-      />
+      />,
     );
     expect(screen.getByText(/welcome/i)).toBeInTheDocument();
     expect(screen.getByText(/subtitle/i)).toBeInTheDocument();
@@ -21,7 +21,7 @@ describe('HeroImage', () => {
         imageUrl="https://placehold.co/1200x600/png"
         title="Disabled Hero"
         disabled
-      />
+      />,
     );
     const titleEl = screen.getByText(/disabled hero/i);
     const wrapper = titleEl.closest('section');

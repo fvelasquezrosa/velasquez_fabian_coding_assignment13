@@ -9,7 +9,13 @@ describe('Img', () => {
   });
 
   test('changes style when disabled', () => {
-    render(<Img src="https://placehold.co/300x150/png" alt="Disabled image" disabled />);
+    render(
+      <Img
+        src="https://placehold.co/300x150/png"
+        alt="Disabled image"
+        disabled
+      />,
+    );
     const img = screen.getByAltText(/disabled image/i);
     expect(img).toHaveStyle('opacity: 0.5');
     expect(img).toHaveStyle('cursor: not-allowed');

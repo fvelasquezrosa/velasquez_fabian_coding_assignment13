@@ -11,7 +11,7 @@ describe('TableHeader', () => {
             <th>Name</th>
           </tr>
         </TableHeader>
-      </table>
+      </table>,
     );
     expect(screen.getByText(/name/i)).toBeInTheDocument();
   });
@@ -24,7 +24,7 @@ describe('TableHeader', () => {
             <th>Disabled</th>
           </tr>
         </TableHeader>
-      </table>
+      </table>,
     );
     const el = screen.getByText(/disabled/i);
     expect(el.closest('thead')).toHaveStyle('opacity: 0.5');

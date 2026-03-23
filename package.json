@@ -20,16 +20,26 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:ci": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" --max-warnings=0",
+    "prepare": "husky"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest",
-      "plugin:storybook/recommended"
-    ]
+      "plugin:storybook/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "rules": {
+      "testing-library/no-node-access": "off",
+      "@typescript-eslint/no-unused-vars": "warn"
+    }
   },
   "browserslist": {
     "production": [
@@ -52,8 +62,12 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@types/styled-components": "^5.1.36",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-storybook": "^10.2.13",
+    "husky": "^9.1.7",
     "jest-styled-components": "^7.2.0",
+    "prettier": "^3.8.1",
     "prop-types": "^15.8.1",
     "storybook": "^10.2.13",
     "webpack": "^5.105.3"

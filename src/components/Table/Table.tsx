@@ -15,10 +15,7 @@ const StyledTable = styled.table<{ $disabled?: boolean }>`
   }
 `;
 
-export const Table: React.FC<TableProps> = ({
-  children,
-  disabled = false,
-}) => {
+export const Table: React.FC<TableProps> = ({ children, disabled = false }) => {
   return (
     <StyledTable $disabled={disabled} aria-disabled={disabled}>
       {children}

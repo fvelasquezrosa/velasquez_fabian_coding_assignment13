@@ -80,7 +80,12 @@ export const HeroImage: React.FC<HeroImageProps> = ({
   overlayColor,
 }) => {
   return (
-    <Wrapper $img={imageUrl} $h={height} $disabled={disabled} aria-disabled={disabled}>
+    <Wrapper
+      $img={imageUrl}
+      $h={height}
+      $disabled={disabled}
+      aria-disabled={disabled}
+    >
       <Overlay $overlay={overlayColor} />
       <Content>
         <Title>{title}</Title>
