@@ -26,7 +26,7 @@ const App: React.FC = () => {
     >
       <h1 style={{ margin: 0 }}>UI Component Library</h1>
       <p style={{ margin: 0 }}>
-        Production build served with Docker on port 8083.
+        Production build served with Docker on port 8018.
       </p>
 
       <div

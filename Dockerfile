@@ -1,28 +1,21 @@
 # ---------- Build stage ----------
 FROM node:20-alpine AS build
 
-# Working directory requirement
-WORKDIR /velasquez_fabian_ui_garden
+WORKDIR /velasquez_fabian_ui_garden_build_checks
 
-# Install deps
 COPY package*.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps
 
-# Copy source and build
 COPY . .
 RUN npm run build
-
 
 # ---------- Production stage ----------
 FROM nginx:alpine
 
-# Working directory requirement
-WORKDIR /velasquez_fabian_ui_garden
+WORKDIR /velasquez_fabian_ui_garden_build_checks
 
-# Copy build output to nginx html folder
-COPY --from=build /velasquez_fabian_ui_garden/build /usr/share/nginx/html
+COPY --from=build /velasquez_fabian_ui_garden_build_checks/build /usr/share/nginx/html
 
-# Nginx listens on 80 inside container; we will map host 8083 -> container 80
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
